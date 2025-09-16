@@ -5,83 +5,47 @@ This project simulates an autonomous delivery agent navigating a 2D grid world. 
 The code file is named ```delivery_agent.py.```
 
 # Features
+- GridWorld Environment
+  - Walls (#)
+  - Terrain costs (1-9)
+  - Moving obstacles (cyclic paths)
+- Algorithms Implemented
+  - Breadth-First Search (BFS)
+  - Uniform Cost Search (UCS)
+  - A* Search
+  - Simulated Annealing with Replanning
+- Experiment Logging
+  - Results saved in results/results.csv
+  - Performance plots generated for cost, nodes expanded, and execution time
+- ASCII Visualization
+  - Prints the grid map with path, start (S), and goal (G)
 
-GridWorld Environment
-
-Walls (#)
-
-Terrain costs (1-9)
-
-Moving obstacles (cyclic paths)
-
-
-Algorithms Implemented
-
-Breadth-First Search (BFS)
-
-Uniform Cost Search (UCS)
-
-A* Search
-
-Simulated Annealing with Replanning
-
-
-Experiment Logging
-
-Results saved in results/results.csv
-
-Performance plots generated for cost, nodes expanded, and execution time
-
-
-ASCII Visualization
-
-Prints the grid map with path, start (S), and goal (G)
-
-
-
-
----
-
-Installation
-
+## Installation
 Make sure you have Python 3.8+ installed.
 Install the required libraries:
+```pip install matplotlib pandas```
 
-pip install matplotlib pandas
-
-
----
-
-Usage
-
+## Usage
 Run the program with command-line arguments:
+```python delivery_agent.py [OPTIONS]```
 
-python delivery_agent.py [OPTIONS]
+  ## Options
+  - --algo
+   Choose which algorithm to run.
+   Values: bfs, ucs, astar, simulated_annealing_replan, all
+   Default: all
 
-Options
-
---algo
-Choose which algorithm to run.
-Values: bfs, ucs, astar, simulated_annealing_replan, all
-Default: all
-
---map
+  - --map
 Choose which map to run on.
 Values: small, medium, large, dynamic, all
 Default: all
 
---plot
+  - --plot
 Generate plots from results/results.csv.
 
-
-
----
-
-Examples
-
+## Examples
 Run all algorithms on all maps:
-
-python delivery_agent.py
+```python delivery_agent.py```
 
 Run A* on the medium map:
 
