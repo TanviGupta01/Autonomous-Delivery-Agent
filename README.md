@@ -46,72 +46,37 @@ Generate plots from results/results.csv.
 ## Examples
 Run all algorithms on all maps:
 ```python delivery_agent.py```
-
 Run A* on the medium map:
-
-python delivery_agent.py --algo astar --map medium
-
+```python delivery_agent.py --algo astar --map medium```
 Run BFS on the dynamic map with moving obstacles:
-
-python delivery_agent.py --algo bfs --map dynamic
-
+```python delivery_agent.py --algo bfs --map dynamic```
 Generate comparison plots after running experiments:
+```python delivery_agent.py --plot```
 
-python delivery_agent.py --plot
-
-
----
-
-Output
-
-Console shows algorithm performance:
-
+## Output
+- Console shows algorithm performance:
 --- small ---
+```
 bfs: cost=6, nodes=10, time=0.0001s
 ucs: cost=6, nodes=8, time=0.0001s
 astar: cost=6, nodes=6, time=0.0000s
 simulated_annealing_replan: cost=6, nodes=12, time=0.0012s
-
-Path visualization in ASCII grid:
-
+```
+- Path visualization in ASCII grid:
+```
 S***
 1#*1
 111*
 111G
+```
+- Results stored in:
+  - results/results.csv
+  - results/cost_comparison.png
+  - results/nodes_comparison.png
+  - results/time_comparison.png
 
-Results stored in:
-
-results/results.csv
-
-results/cost_comparison.png
-
-results/nodes_comparison.png
-
-results/time_comparison.png
-
-
-
-
----
-
-File Structure
-
-delivery_agent.py    # Main code file
-results/             # Stores results and plots
-  ├── results.csv
-  ├── cost_comparison.png
-  ├── nodes_comparison.png
-  └── time_comparison.png
-
-
----
-
-Future Improvements
-
-Support diagonal movement
-
-Add probabilistic moving obstacles
-
-Integrate real map inputs from external files
-
-GUI visualization of the agent
+### Future Improvement
+- Support diagonal movement
+- Add probabilistic moving obstacles
+- Integrate real map inputs from external files
+- GUI visualization of the agent
